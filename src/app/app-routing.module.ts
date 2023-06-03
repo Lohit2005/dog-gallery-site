@@ -1,10 +1,19 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
+import { DogGalleryComponent } from './components/dog-gallery/dog-gallery.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: '', redirectTo: 'dog-gallery', pathMatch: 'full' },
+  {
+    path: 'dog-gallery',
+    component: DogGalleryComponent,
+  },
+  { path: '**', redirectTo: 'dog-gallery', pathMatch: 'full' },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+
+export class AppRoutingModule {}

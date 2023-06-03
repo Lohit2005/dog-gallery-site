@@ -1,0 +1,38 @@
+<div class="fixed-bar">
+  <p class="h1 heading">Dog Gallery</p>
+</div>
+<div class="filter-input">
+  <input
+    type="search"
+    #input
+    class="form-control textColor"
+    placeholder="Type here to filter by breed"
+    (keyup)="onFilterSearch(input.value)"
+  />
+</div>
+
+<div class="text-center">
+  <div *ngIf="waitFlag" class="spinner-border" role="status">
+  </div>
+</div>
+
+<div class="breed-images-div" [style]="{ display: waitFlag ? 'none' : 'flex' }">
+  <div
+    *ngFor="let breed of filteredBreedInfo"
+    (click)="onBreedClick(breed)"
+    class="breed-image"
+    style="margin: 20px 20px 0 20px;"
+  >
+    <div>
+      <img
+        style="width: 100px; height: 100px"
+        [src]="breed.image"
+        (load)="onImageLoad()"
+        alt=""
+      />
+    </div>
+    <div class="breed-name">
+      <p>{{ breed.breedName }}</p>
+    </div>
+  </div>
+</div>

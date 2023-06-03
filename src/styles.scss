@@ -1,1 +1,49 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+
+body {
+  margin: 0;
+}
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.fixed-bar {
+  padding: 5px;
+  text-align: center;
+  width: 100%;
+  background: #8fbddf;
+}
+
+.heading {
+  /* margin-bottom: 5px; */
+  margin: 0;
+}
+
+p {
+  margin: 0 !important;
+}
+
+.flex-div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.breed-image {
+  width: 100px;
+  cursor: pointer;
+}
+
+.mat-form-field-appearance-fill .mat-form-field-flex {
+  background:none !important;
+}
+
+/* mat-form-field {
+  width: 30% !important;
+} */

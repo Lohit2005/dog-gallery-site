@@ -1,0 +1,45 @@
+<div class="container">
+
+<div class="fixed-bar">
+  <p class="h4">{{ breed.breedName }}</p>
+</div>
+
+<div *ngIf="subBreedsInfo.length > 0" style="margin-top: 12px">
+  <h2 mat-dialog-title>Sub Breeds</h2>
+</div>
+
+<mat-dialog-content class="mat-typography">
+  <div class="flex-div">
+    <div
+    class="breed-image"
+      *ngFor="let subBreed of subBreedsInfo"
+    >
+      <div>
+        <img
+          style="width: 100px; height: 100px"
+          [src]="subBreed.image"
+          alt=""
+        />
+      </div>
+      <div class="breedName">
+        <p>{{ subBreed.breedName }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div [style]="{ 'margin-top': subBreedsInfo.length > 0 ? '0' : '12px' }">
+    <h2 mat-dialog-title>More Images</h2>
+  </div>
+
+  <div class="moreImages">
+    <div class="breed-image" *ngFor="let image of breedImages">
+      <div>
+        <img style="width: 100px; height: 100px" [src]="image" alt="" />
+      </div>
+    </div>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+</mat-dialog-actions>
+</div>
